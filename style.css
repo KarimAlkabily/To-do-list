@@ -1,0 +1,227 @@
+:root {
+    --bg-color: #060c1a;
+    --card-bg: rgba(255, 255, 255, 0.05);
+    --gold: #e2b04a;
+    --text-color: #f0eadc;
+    --input-bg: rgba(255, 255, 255, 0.08);
+}
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: 'Cairo', sans-serif;
+    background-color: var(--bg-color);
+    color: var(--text-color);
+    min-height: 100vh;
+    direction: rtl;
+    display: flex;
+    justify-content: center;
+}
+
+.stars {
+    position: fixed;
+    inset: 0;
+    background: radial-gradient(ellipse at bottom, #1B2735 0%, #090A0F 100%);
+    z-index: -1;
+}
+
+.container {
+    width: 100%;
+    max-width: 500px;
+    padding: 40px 20px;
+}
+
+header {
+    text-align: center;
+    margin-bottom: 30px;
+}
+
+header h1 {
+    color: var(--gold);
+    font-weight: 900;
+    margin-bottom: 5px;
+}
+
+.badge {
+    display: inline-block;
+    padding: 4px 12px;
+    border: 1px solid var(--gold);
+    border-radius: 20px;
+    font-size: 0.8rem;
+    color: var(--gold);
+}
+
+.stats-bar {
+    display: flex;
+    gap: 10px;
+    margin-bottom: 25px;
+}
+
+.stat-card {
+    flex: 1;
+    background: var(--card-bg);
+    padding: 15px;
+    border-radius: 12px;
+    text-align: center;
+    border: 1px solid rgba(226, 176, 74, 0.1);
+}
+
+.stat-card span {
+    display: block;
+    font-size: 1.4rem;
+    font-weight: bold;
+    color: var(--gold);
+}
+
+.stat-card p {
+    font-size: 0.7rem;
+    opacity: 0.6;
+}
+
+.add-section {
+    background: var(--card-bg);
+    padding: 20px;
+    border-radius: 15px;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    margin-bottom: 25px;
+}
+
+.input-group {
+    display: flex;
+    gap: 8px;
+    margin-top: 10px;
+}
+
+input {
+    flex: 1;
+    background: var(--input-bg);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    padding: 12px;
+    border-radius: 8px;
+    color: white;
+    outline: none;
+    font-family: 'Cairo';
+}
+
+input:focus {
+    border-color: var(--gold);
+}
+
+#addBtn {
+    background: var(--gold);
+    border: none;
+    padding: 0 20px;
+    border-radius: 8px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+#addBtn:hover {
+    opacity: 0.8;
+}
+
+.task-item {
+    background: var(--card-bg);
+    padding: 15px;
+    border-radius: 12px;
+    margin-bottom: 10px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-right: 4px solid var(--gold);
+    animation: fadeIn 0.3s ease;
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(10px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.task-item.completed {
+    border-right-color: #2ec4b6;
+    opacity: 0.6;
+}
+
+.task-item.completed span {
+    text-decoration: line-through;
+}
+
+.actions button {
+    background: transparent;
+    border: none;
+    cursor: pointer;
+    font-size: 1.1rem;
+    margin-right: 10px;
+    filter: grayscale(1);
+    transition: 0.2s;
+}
+
+.actions button:hover {
+    filter: grayscale(0);
+    transform: scale(1.2);
+}
+
+/* Modal Styles */
+.modal {
+    display: none;
+    position: fixed;
+    inset: 0;
+    background: rgba(0, 0, 0, 0.85);
+    z-index: 100;
+    justify-content: center;
+    align-items: center;
+    backdrop-filter: blur(4px);
+}
+
+.modal-content {
+    background: #0c162d;
+    border: 1px solid var(--gold);
+    padding: 30px;
+    border-radius: 15px;
+    width: 90%;
+    max-width: 400px;
+}
+
+.modal-buttons {
+    display: flex;
+    gap: 10px;
+    margin-top: 20px;
+}
+
+.save-edit {
+    background: var(--gold);
+    flex: 1;
+    border: none;
+    padding: 10px;
+    border-radius: 8px;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+.cancel-edit {
+    background: transparent;
+    flex: 1;
+    border: 1px solid #ff4d4d;
+    color: #ff4d4d;
+    padding: 10px;
+    border-radius: 8px;
+    cursor: pointer;
+}
+
+.empty-state {
+    text-align: center;
+    opacity: 0.4;
+    margin-top: 40px;
+}

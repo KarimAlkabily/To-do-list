@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>مهامي في رمضان 🌙</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;700;900&display=swap" rel="stylesheet">
+</head>
+
+<body>
+    <div class="stars"></div>
+
+    <div class="container">
+        <header>
+            <div class="header-decor">🌙</div>
+            <h1>مهامي في رمضان</h1>
+            <p>نظّم يومك في شهر الخير والبركة</p>
+            <div class="badge">رمضان كريم ✨</div>
+        </header>
+
+        <div class="stats-bar">
+            <div class="stat-card">
+                <span id="total-count">0</span>
+                <p>إجمالي المهام</p>
+            </div>
+            <div class="stat-card gold">
+                <span id="completed-count">0</span>
+                <p>مكتملة</p>
+            </div>
+            <div class="stat-card">
+                <span id="remaining-count">0</span>
+                <p>متبقية</p>
+            </div>
+        </div>
+
+        <div class="add-section">
+            <label>➕ أضف مهمة جديدة</label>
+            <div class="input-group">
+                <input type="text" id="taskInput" placeholder="">
+                <button id="addBtn">أضف</button>
+            </div>
+        </div>
+
+        <ul id="taskList"></ul>
+
+        <div id="emptyState" class="empty-state">
+            🌙 لا توجد مهام بعد.. ابدأ يومك بالخير!
+        </div>
+    </div>
+
+    <div id="editModal" class="modal">
+        <div class="modal-content">
+            <h3>تعديل المهمة</h3>
+            <input type="text" id="editInput">
+            <div class="modal-buttons">
+                <button id="saveEditBtn" class="save-edit">حفظ التعديل</button>
+                <button id="cancelEditBtn" class="cancel-edit">إلغاء</button>
+            </div>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+
+</html>
